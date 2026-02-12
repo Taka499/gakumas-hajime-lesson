@@ -12,6 +12,7 @@ const ACTIVITY_LABELS: Record<ActivityType, string> = {
   [ActivityType.REGULAR_LESSON]: "レッスン",
   [ActivityType.CONSULTATION]: "相談",
   [ActivityType.OUTING]: "お出かけ",
+  [ActivityType.ACTIVITY_GRANT]: "活動支給",
   [ActivityType.SPECIAL_TRAINING]: "特訓",
   [ActivityType.MID_EXAM]: "中間試験",
   [ActivityType.FINAL_EXAM]: "最終試験",
@@ -59,7 +60,7 @@ export function WeekCard({
       {/* Activity selector (for flexible weeks) */}
       {hasMultipleActivities ? (
         <select
-          class="w-full p-1 border rounded text-xs mb-2"
+          class="w-full p-2 sm:p-1 border rounded text-sm sm:text-xs mb-2"
           value={selectedActivity}
           onChange={(e) => onActivityChange((e.target as HTMLSelectElement).value as ActivityType)}
         >
@@ -77,7 +78,7 @@ export function WeekCard({
           {PARAM_OPTIONS.map(({ value, label }) => (
             <button
               key={value}
-              class={`flex-1 px-1 py-0.5 rounded text-xs transition-colors ${
+              class={`flex-1 min-h-[44px] sm:min-h-0 px-1 py-1.5 rounded text-xs transition-colors ${
                 selectedParam === value
                   ? "bg-indigo-600 text-white"
                   : "bg-gray-100 hover:bg-gray-200"

@@ -62,6 +62,7 @@ export function calculateProducePlan(plan: ProducePlan): WeekResult[] {
         estimated = result.estimated;
         break;
       }
+      case ActivityType.ACTIVITY_GRANT:
       case ActivityType.SPECIAL_TRAINING:
       case ActivityType.MID_EXAM:
       case ActivityType.FINAL_EXAM:

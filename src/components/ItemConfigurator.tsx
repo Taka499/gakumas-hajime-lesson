@@ -16,7 +16,7 @@ export function ItemConfigurator({
   return (
     <div class="bg-white rounded-lg shadow p-4 mb-6">
       <h2 class="text-lg font-semibold mb-3">チャレンジPアイテム</h2>
-      <div class="space-y-3">
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
         {/* Slot 1 */}
         <div>
           <label class="block text-sm font-medium text-gray-700 mb-1">スロット1</label>

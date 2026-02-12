@@ -9,10 +9,10 @@ describe("calculateRegularLessonParams", () => {
       ParameterType.VOCAL,
       Slot1Item.NONE,
     );
-    expect(result.vocal).toBe(70);
-    expect(result.dance).toBe(23);
-    expect(result.visual).toBe(23);
-    expect(result.estimated).toBe(true);
+    expect(result.vocal).toBe(100);
+    expect(result.dance).toBe(0);
+    expect(result.visual).toBe(0);
+    expect(result.estimated).toBe(false);
   });
 
   test("Week 6 with no item, selecting Dance", () => {
@@ -21,10 +21,10 @@ describe("calculateRegularLessonParams", () => {
       ParameterType.DANCE,
       Slot1Item.NONE,
     );
-    expect(result.vocal).toBe(45);
+    expect(result.vocal).toBe(0);
     expect(result.dance).toBe(150);
-    expect(result.visual).toBe(45);
-    expect(result.estimated).toBe(true);
+    expect(result.visual).toBe(0);
+    expect(result.estimated).toBe(false);
   });
 
   test("Week 15 with Vocal Textbook, selecting Vocal", () => {
@@ -35,9 +35,9 @@ describe("calculateRegularLessonParams", () => {
     );
     // Base: floor(200 * 1.1) = 220, then floor(220 * 1.085) = 238
     expect(result.vocal).toBe(238);
-    // Non-selected: floor(55 * 1.1) = 60
-    expect(result.dance).toBe(60);
-    expect(result.visual).toBe(60);
+    // Non-selected: floor(0 * 1.1) = 0
+    expect(result.dance).toBe(0);
+    expect(result.visual).toBe(0);
   });
 
   test("Week 2 with Voice Recorder, selecting Vocal, below 17 cards", () => {
@@ -48,9 +48,9 @@ describe("calculateRegularLessonParams", () => {
       10, // below 17 threshold
     );
     // No recorder bonus since skill cards < 17
-    expect(result.vocal).toBe(70);
-    expect(result.dance).toBe(23);
-    expect(result.visual).toBe(23);
+    expect(result.vocal).toBe(100);
+    expect(result.dance).toBe(0);
+    expect(result.visual).toBe(0);
   });
 
   test("Week 2 with Voice Recorder, selecting Vocal, at 17 cards", () => {
@@ -60,7 +60,7 @@ describe("calculateRegularLessonParams", () => {
       Slot1Item.VOICE_RECORDER,
       17,
     );
-    expect(result.vocal).toBe(85); // 70 + 15
+    expect(result.vocal).toBe(115); // 100 + 15
   });
 
   test("Invalid week returns zeros", () => {
