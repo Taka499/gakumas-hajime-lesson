@@ -16,13 +16,9 @@ export {
 
 export {
   type BaseValue,
-  type ConsultationValue,
-  type OutingValue,
   type WeekScheduleEntry,
   LEGEND_LESSON_VALUES,
   REGULAR_LESSON_VALUES,
-  CONSULTATION_VALUES,
-  OUTING_VALUES,
   WEEK_SCHEDULE,
 } from "./constants.ts";
 

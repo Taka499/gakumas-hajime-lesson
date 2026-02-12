@@ -31,6 +31,7 @@ export enum ActivityType {
   CONSULTATION = "consultation",
   OUTING = "outing",
   ACTIVITY_GRANT = "activity_grant",
+  REST = "rest",
   SPECIAL_TRAINING = "special_training",
   MID_EXAM = "mid_exam",
   FINAL_EXAM = "final_exam",

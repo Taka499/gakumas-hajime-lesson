@@ -8,11 +8,12 @@ const PARAM_OPTIONS: Array<{ value: ParameterType; label: string }> = [
 ];
 
 const ACTIVITY_LABELS: Record<ActivityType, string> = {
-  [ActivityType.LEGEND_LESSON]: "Lレッスン",
-  [ActivityType.REGULAR_LESSON]: "レッスン",
+  [ActivityType.LEGEND_LESSON]: "レッスン",
+  [ActivityType.REGULAR_LESSON]: "授業",
   [ActivityType.CONSULTATION]: "相談",
   [ActivityType.OUTING]: "お出かけ",
   [ActivityType.ACTIVITY_GRANT]: "活動支給",
+  [ActivityType.REST]: "お休み",
   [ActivityType.SPECIAL_TRAINING]: "特訓",
   [ActivityType.MID_EXAM]: "中間試験",
   [ActivityType.FINAL_EXAM]: "最終試験",
