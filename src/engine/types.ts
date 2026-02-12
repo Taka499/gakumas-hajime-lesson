@@ -30,6 +30,7 @@ export enum ActivityType {
   REGULAR_LESSON = "regular_lesson",
   CONSULTATION = "consultation",
   OUTING = "outing",
+  ACTIVITY_GRANT = "activity_grant",
   SPECIAL_TRAINING = "special_training",
   MID_EXAM = "mid_exam",
   FINAL_EXAM = "final_exam",
