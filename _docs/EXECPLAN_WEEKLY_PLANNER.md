@@ -16,16 +16,19 @@ This is Phase 2 of the project roadmap. Phase 1 established the build pipeline, 
 
 ## Progress
 
-- [ ] Milestone 1: Engine modularization and type system expansion
-- [ ] Milestone 2: Regular lesson and activity calculations
-- [ ] Milestone 3: Slot 2/3 P-Item modeling (skill card tracking + rival score)
-- [ ] Milestone 4: 18-week planner UI
-- [ ] Milestone 5: Cumulative display, exam scoring preview, and polish
+- [x] (2026-02-13) Milestone 1: Engine modularization — types.ts, constants.ts, legend.ts, barrel file. 6 Phase 1 tests unchanged.
+- [x] (2026-02-13) Milestone 2: Activity calculations — regular.ts, consultation.ts, outing.ts, skillcards.ts, planner.ts. 27 tests passing.
+- [x] (2026-02-13) Milestone 3: Skill card tracking integrated into Milestone 2. Recorder conditional activation tested (below/at 17 cards).
+- [x] (2026-02-13) Milestone 4: 18-week planner UI — ItemConfigurator (3 slots), WeekCard, WeekPlannerGrid, SummaryPanel. Old components removed.
+- [x] (2026-02-13) Milestone 5: Exam scoring — calculateEvaluation, checkPenalty with threshold scaling. 34 tests passing across 6 files.
 
 
 ## Surprises & Discoveries
 
-(None yet — to be updated during implementation)
+- Observation: Milestones 2 and 3 naturally merged. Skill card tracking was simple enough to implement alongside the activity calculators, and the Recorder conditional activation test confirmed the integration works end-to-end.
+  Evidence: planner.test.ts "Recorder bonus depends on skill card count in plan" — at week 4 (12 cards) no +15, at week 16 (17 cards) +15 applies.
+- Observation: Extracted `applySlot1Effects()` as a shared function from legend.ts for reuse by regular.ts. This avoided duplicating the Textbook/Recorder logic.
+- Observation: Build size grew from 25KB to 36KB JS (10→13KB gzip) with full planner. Still well under budget.
 
 
 ## Decision Log
@@ -57,7 +60,17 @@ This is Phase 2 of the project roadmap. Phase 1 established the build pipeline, 
 
 ## Outcomes & Retrospective
 
-(To be completed after implementation)
+Phase 2 implementation complete (2026-02-13). All 5 milestones delivered:
+
+- Engine modularized into 8 files (types, constants, legend, regular, consultation, outing, skillcards, exam, planner) + barrel file
+- All activity types calculated: Legend Lessons, Regular Lessons, Consultations, Outings (estimated values flagged)
+- Skill card tracking with Recorder conditional activation
+- Full 18-week planner UI with 3-slot item configuration, flexible-week activity switching, cumulative totals
+- Exam scoring with evaluation formula (×2.1) and penalty threshold checking
+- 34 tests across 6 test files
+- Production build: 36KB JS + 14KB CSS (~17KB gzipped)
+
+Remaining for future phases: verified data for regular lessons/consultations/outings, CumulativeChart visualization, idol database, strategy optimizer.
 
 
 ## Context and Orientation
