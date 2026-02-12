@@ -36,6 +36,12 @@ export {
   INITIAL_SKILL_CARD_COUNT,
   updateSkillCards,
 } from "./skillcards.ts";
+export {
+  EVALUATION_COEFFICIENT,
+  PARAMETER_CAP,
+  calculateEvaluation,
+  checkPenalty,
+} from "./exam.ts";
 
 // Phase 1 backwards compatibility alias
 export { calculateLegendLessonParams as calculateLessonParams } from "./legend.ts";
