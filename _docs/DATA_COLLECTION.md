@@ -101,41 +101,56 @@ Slot 3 items are progression-based, triggering every 2-3 skill card acquisitions
 **Status**: Items cataloged, exact interaction with Legend Lesson parameter formula needs verification in Phase 2.
 
 
-## Regular Lesson Values (Phase 2 — Partially Collected)
+## Regular Lesson Values (Phase 2 — Verified)
 
-Regular lessons occur at weeks 1, 2, 6, and 15. These contribute to overall parameter totals but are not the focus of Phase 1.
+Regular lessons occur at weeks 1, 2, 6, and 15. In 初LEGEND, regular lessons grant gains **only to the selected parameter**. Non-selected parameters receive 0 (unlike Legend Lessons which distribute excess to all parameters).
 
-| Week | Selected Parameter | Non-Selected (each) | Notes                |
-|------|-------------------|---------------------|----------------------|
-| 1-2  | ~60-80            | ~20-30              | Unverified estimates |
-| 6    | ~150              | ~40-50              | After +150 bonus     |
-| 15   | ~200              | ~50-60              | After +200 bonus     |
+| Week | Selected Parameter | Non-Selected (each) |
+|------|-------------------|---------------------|
+| 1    | +100              | 0                   |
+| 2    | +100              | 0                   |
+| 6    | +150              | 0                   |
+| 15   | +200              | 0                   |
 
-**Status**: Missing — exact values need to be extracted from the wiki or measured in-game.
+Source: https://wikiwiki.jp/gakumas/初LEGEND (選択パラ+100, +150, +200)
 
 
-## Consultation Values (Phase 2 — Missing)
+## Consultation Values (Phase 2 — Estimated)
 
-Consultations can occur at weeks 5, 8, 13, and 17. They are considered the highest-value activity for parameter growth.
+Consultations can occur at weeks 5, 8, 13, and 17. They are considered the highest-value activity for parameter growth. The wiki describes them as "安心と信頼の相談。変更点は無い。" (reliable consultations with no changes from previous modes) but provides no specific parameter gain numbers.
 
-Data needed:
-- Base parameter gains per consultation by week
+| Week | Per-Param Gain (each of Vo/Da/Vi) | Notes           |
+|------|-----------------------------------|-----------------|
+| 5    | ~40                               | Estimated       |
+| 8    | ~55                               | Estimated       |
+| 13   | ~75                               | Estimated       |
+| 17   | ~90                               | Estimated       |
+
+Data still needed:
+- Verified base parameter gains per consultation by week
 - Drink exchange bonus values
 - Interaction with support cards (相談軸 cards)
 
-**Status**: Missing — high priority for Phase 2.
+**Status**: Estimated — no wiki source provides exact numbers. Values are reasonable estimates pending in-game verification.
 
 
-## Outing Values (Phase 2 — Missing)
+## Outing Values (Phase 2 — Estimated)
 
-Outings occur at weeks 3, 5, 11, and 13. They provide parameter gains and trigger Slot 2 item effects.
+Outings occur at weeks 3, 5, 11, and 13. They provide parameter gains and trigger Slot 2 item effects. The wiki lists P-point costs and HP recovery percentages (40% for weeks 3/5, 60% for weeks 11/13) but provides no specific parameter gain values.
 
-Data needed:
-- Base parameter gains per outing by week
+| Week | Per-Param Gain (each of Vo/Da/Vi) | Notes           |
+|------|-----------------------------------|-----------------|
+| 3    | ~25                               | Estimated       |
+| 5    | ~30                               | Estimated       |
+| 11   | ~50                               | Estimated       |
+| 13   | ~60                               | Estimated       |
+
+Data still needed:
+- Verified base parameter gains per outing by week
 - Parameter gain variation by outing type
 - Interaction with Slot 2 items
 
-**Status**: Missing — needed for Phase 2 weekly planner.
+**Status**: Estimated — no wiki source provides exact numbers. Values are reasonable estimates pending in-game verification.
 
 
 ## Parameter Cap (Phase 3 — Verified)
@@ -174,9 +189,9 @@ Note: Stamina is tracked in this formula but HP management is out of scope per u
 All data needed for Legend Lesson + Slot 1 item calculations is verified.
 
 ### Phase 2 (Next Priority)
-1. Regular lesson base values for weeks 1, 2, 6, 15
-2. Consultation parameter gains by week
-3. Outing parameter gains by week
+1. ~~Regular lesson base values for weeks 1, 2, 6, 15~~ — **Verified** (selected-only: +100/+100/+150/+200)
+2. Consultation parameter gains by week — **Estimated** (not available on wiki; needs in-game verification)
+3. Outing parameter gains by week — **Estimated** (not available on wiki; needs in-game verification)
 4. Slot 3 item interaction with Legend Lesson formula (do necktie "lesson" bonuses stack with textbook?)
 5. Full idol database (base stats, growths, specializations)
 
@@ -189,4 +204,5 @@ All data needed for Legend Lesson + Slot 1 item calculations is verified.
 
 ## Revision History
 
+- 2026-02-13: Regular lesson values verified from wiki: selected-only gains (+100/+100/+150/+200), nonSelected=0. Consultation and outing values remain estimated (not documented on wiki). Updated data gap tracking.
 - 2026-02-13: Initial creation. Phase 1 data fully verified. Slot 2/3 items cataloged with critical correction about パラメータ上昇量増加 meaning rival score, not parameter gains.

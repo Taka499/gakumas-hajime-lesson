@@ -15,12 +15,14 @@ export const LEGEND_LESSON_VALUES: Partial<Record<Week, BaseValue>> = {
   [Week.WEEK_16]: { selected: 570, nonSelected: 115, estimated: false },
 };
 
-// Regular Lesson base values (estimated — need wiki verification)
+// Regular Lesson base values (verified from wiki)
+// In 初LEGEND, regular lessons grant gains only to the selected parameter.
+// Non-selected parameters receive 0.
 export const REGULAR_LESSON_VALUES: Partial<Record<Week, BaseValue>> = {
-  [Week.WEEK_1]: { selected: 70, nonSelected: 23, estimated: true },
-  [Week.WEEK_2]: { selected: 70, nonSelected: 23, estimated: true },
-  [Week.WEEK_6]: { selected: 150, nonSelected: 45, estimated: true },
-  [Week.WEEK_15]: { selected: 200, nonSelected: 55, estimated: true },
+  [Week.WEEK_1]: { selected: 100, nonSelected: 0, estimated: false },
+  [Week.WEEK_2]: { selected: 100, nonSelected: 0, estimated: false },
+  [Week.WEEK_6]: { selected: 150, nonSelected: 0, estimated: false },
+  [Week.WEEK_15]: { selected: 200, nonSelected: 0, estimated: false },
 };
 
 // Consultation gains per week (estimated — formula unclear)
