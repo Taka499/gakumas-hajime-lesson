@@ -27,6 +27,15 @@ export {
 } from "./constants.ts";
 
 export { calculateLegendLessonParams, applySlot1Effects } from "./legend.ts";
+export { calculateRegularLessonParams } from "./regular.ts";
+export { calculateConsultationParams } from "./consultation.ts";
+export { calculateOutingParams } from "./outing.ts";
+export { calculateProducePlan } from "./planner.ts";
+export {
+  type SkillCardState,
+  INITIAL_SKILL_CARD_COUNT,
+  updateSkillCards,
+} from "./skillcards.ts";
 
 // Phase 1 backwards compatibility alias
 export { calculateLegendLessonParams as calculateLessonParams } from "./legend.ts";
