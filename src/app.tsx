@@ -23,6 +23,7 @@ const ACTIVITY_TO_CHAR: Record<ActivityType, string> = {
   [ActivityType.CONSULTATION]: "c",
   [ActivityType.OUTING]: "o",
   [ActivityType.ACTIVITY_GRANT]: "g",
+  [ActivityType.REST]: "h",
   [ActivityType.SPECIAL_TRAINING]: "t",
   [ActivityType.MID_EXAM]: "m",
   [ActivityType.FINAL_EXAM]: "f",

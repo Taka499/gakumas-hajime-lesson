@@ -1,22 +1,11 @@
 import { type LessonResult, type Week } from "./types.ts";
-import { CONSULTATION_VALUES } from "./constants.ts";
 
 /**
  * Calculate parameter gains for a consultation.
- * Consultations give roughly equal gains to all 3 parameters.
- * All current values are estimated.
+ * Base gains are 0 — actual gains come from support card effects (future feature).
  */
 export function calculateConsultationParams(
-  week: Week,
+  _week: Week,
 ): LessonResult & { estimated: boolean } {
-  const value = CONSULTATION_VALUES[week];
-  if (!value) {
-    return { vocal: 0, dance: 0, visual: 0, estimated: true };
-  }
-  return {
-    vocal: value.perParam,
-    dance: value.perParam,
-    visual: value.perParam,
-    estimated: value.estimated,
-  };
+  return { vocal: 0, dance: 0, visual: 0, estimated: false };
 }

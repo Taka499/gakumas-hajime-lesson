@@ -25,32 +25,9 @@ export const REGULAR_LESSON_VALUES: Partial<Record<Week, BaseValue>> = {
   [Week.WEEK_15]: { selected: 200, nonSelected: 0, estimated: false },
 };
 
-// Consultation gains per week (estimated — formula unclear)
-// Consultations give roughly equal gains to all 3 parameters
-export interface ConsultationValue {
-  perParam: number;
-  estimated: boolean;
-}
-
-export const CONSULTATION_VALUES: Partial<Record<Week, ConsultationValue>> = {
-  [Week.WEEK_5]: { perParam: 40, estimated: true },
-  [Week.WEEK_8]: { perParam: 55, estimated: true },
-  [Week.WEEK_13]: { perParam: 75, estimated: true },
-  [Week.WEEK_17]: { perParam: 90, estimated: true },
-};
-
-// Outing gains per week (estimated)
-export interface OutingValue {
-  perParam: number;
-  estimated: boolean;
-}
-
-export const OUTING_VALUES: Partial<Record<Week, OutingValue>> = {
-  [Week.WEEK_3]: { perParam: 25, estimated: true },
-  [Week.WEEK_5]: { perParam: 30, estimated: true },
-  [Week.WEEK_11]: { perParam: 50, estimated: true },
-  [Week.WEEK_13]: { perParam: 60, estimated: true },
-};
+// Consultation, outing, activity grant, and rest have no base parameter gains.
+// Parameter gains from these activities come from support card effects,
+// which will be implemented as a future feature.
 
 // Fixed schedule: what activity is available each week
 export interface WeekScheduleEntry {
@@ -62,20 +39,20 @@ export interface WeekScheduleEntry {
 export const WEEK_SCHEDULE: WeekScheduleEntry[] = [
   { week: Week.WEEK_1, allowedActivities: [ActivityType.REGULAR_LESSON], isLegend: false },
   { week: Week.WEEK_2, allowedActivities: [ActivityType.REGULAR_LESSON], isLegend: false },
-  { week: Week.WEEK_3, allowedActivities: [ActivityType.OUTING, ActivityType.ACTIVITY_GRANT], isLegend: false },
+  { week: Week.WEEK_3, allowedActivities: [ActivityType.OUTING, ActivityType.ACTIVITY_GRANT, ActivityType.REST], isLegend: false },
   { week: Week.WEEK_4, allowedActivities: [ActivityType.LEGEND_LESSON], isLegend: true },
-  { week: Week.WEEK_5, allowedActivities: [ActivityType.OUTING, ActivityType.CONSULTATION, ActivityType.ACTIVITY_GRANT], isLegend: false },
+  { week: Week.WEEK_5, allowedActivities: [ActivityType.OUTING, ActivityType.CONSULTATION, ActivityType.ACTIVITY_GRANT, ActivityType.REST], isLegend: false },
   { week: Week.WEEK_6, allowedActivities: [ActivityType.REGULAR_LESSON], isLegend: false },
   { week: Week.WEEK_7, allowedActivities: [ActivityType.LEGEND_LESSON], isLegend: true },
   { week: Week.WEEK_8, allowedActivities: [ActivityType.CONSULTATION], isLegend: false },
   { week: Week.WEEK_9, allowedActivities: [ActivityType.SPECIAL_TRAINING], isLegend: false },
   { week: Week.WEEK_10, allowedActivities: [ActivityType.MID_EXAM], isLegend: false },
-  { week: Week.WEEK_11, allowedActivities: [ActivityType.OUTING, ActivityType.ACTIVITY_GRANT], isLegend: false },
+  { week: Week.WEEK_11, allowedActivities: [ActivityType.OUTING, ActivityType.ACTIVITY_GRANT, ActivityType.REST], isLegend: false },
   { week: Week.WEEK_12, allowedActivities: [ActivityType.LEGEND_LESSON], isLegend: true },
-  { week: Week.WEEK_13, allowedActivities: [ActivityType.OUTING, ActivityType.CONSULTATION, ActivityType.ACTIVITY_GRANT], isLegend: false },
+  { week: Week.WEEK_13, allowedActivities: [ActivityType.OUTING, ActivityType.CONSULTATION, ActivityType.ACTIVITY_GRANT, ActivityType.REST], isLegend: false },
   { week: Week.WEEK_14, allowedActivities: [ActivityType.LEGEND_LESSON], isLegend: true },
   { week: Week.WEEK_15, allowedActivities: [ActivityType.REGULAR_LESSON], isLegend: false },
   { week: Week.WEEK_16, allowedActivities: [ActivityType.LEGEND_LESSON], isLegend: true },
-  { week: Week.WEEK_17, allowedActivities: [ActivityType.CONSULTATION, ActivityType.SPECIAL_TRAINING], isLegend: false },
+  { week: Week.WEEK_17, allowedActivities: [ActivityType.CONSULTATION, ActivityType.SPECIAL_TRAINING, ActivityType.REST], isLegend: false },
   { week: Week.WEEK_18, allowedActivities: [ActivityType.FINAL_EXAM], isLegend: false },
 ];
